@@ -1,0 +1,36 @@
+/*-------------------------------
+
+	共通
+
+-------------------------------*/
+html,
+body {
+    /* font-family: YuMincho, "ヒラギノ明朝 Pro W3", "Hiragino Mincho ProN", serif; */
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+
+/*---------- TOPページ ----------*/
+.questionsLink {
+    /* display: flex;
+    flex-direction: column; */
+    cursor: pointer;
+    color: blue;
+}
+
+/*-------------------------------
+
+	QAページ
+
+-------------------------------*/
+.answers {
+    /* display: none; */
+}
