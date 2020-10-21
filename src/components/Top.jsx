@@ -5,7 +5,7 @@ import Main from './templates/Main';
 const Top = () => {
     return (
         <>
-            <Header heading={"デザイン一問一答"} />
+            <Header heading={"デザインクイズ"} />
             <Main />
         </>
     );

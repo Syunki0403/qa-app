@@ -5,6 +5,9 @@ const initialState = {
     questions: {
         list: []
     },
+    answersheet: {
+        list: {}
+    },
 };
 
 export default initialState;

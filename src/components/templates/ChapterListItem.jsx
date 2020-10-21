@@ -6,10 +6,10 @@ const ChapterListItem = (props) => {
     const dispatch = useDispatch();
 
     return (
-        <div>
+        <div className={"chapterBox"}>
             <h3>{props.title}</h3>
             {(props.texts).map((value, index) => (
-                <p key={index}>
+                <p className={"questionsLinkCover"} key={index}>
                     <a className={"questionsLink"} onClick={() => dispatch(push(`/question/${value.id}`))}>{value.text}</a>
                 </p>
             ))}

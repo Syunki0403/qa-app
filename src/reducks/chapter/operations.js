@@ -11,6 +11,7 @@ export const fetchChapters = () => {
                 if (doc && doc.exists) {
                     const chapters = doc.data();
 
+                    // DBから取得したデータがソートできなかったため
                     (Object.keys(chapters)).map((chapter, index) => {
                         switch (index) {
                             case 0:

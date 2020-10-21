@@ -5,7 +5,7 @@
 -------------------------------*/
 html,
 body {
-    /* font-family: YuMincho, "ヒラギノ明朝 Pro W3", "Hiragino Mincho ProN", serif; */
+    /* font-family: 'Kosugi Maru', sans-serif, YuMincho, "ヒラギノ明朝 Pro W3", "Hiragino Mincho ProN", serif; */
 }
 
 ul {
@@ -17,8 +17,23 @@ a {
     color: black;
 }
 
+header {
+    margin: 10px 0 20px;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 1.7em;
+}
 
 /*---------- TOPページ ----------*/
+.questionsLinkCover{
+    margin: 5px 0;
+}
+
 .questionsLink {
     /* display: flex;
     flex-direction: column; */
@@ -26,11 +41,52 @@ a {
     color: blue;
 }
 
+.questionsLink:hover {
+    text-decoration: underline
+}
+
+.backStyle {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.chapterBox {
+    margin-bottom: 30px;
+}
+
 /*-------------------------------
 
 	QAページ
 
 -------------------------------*/
+.questionBox {
+    margin: 7px 0 40px;
+}
+
 .answers {
-    /* display: none; */
+    display: none;
+    color: red;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.correct {
+    display: none;
+    font-weight: bold;
+    color: blue;
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+.buttonArea {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.buttonArea > div {
+    margin-bottom: 40px;
+}
+
+.hideBtn {
+    display: none;
 }

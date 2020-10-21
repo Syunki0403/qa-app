@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import { ChapterReducer } from '../chapter/reducers';
 import { QuestionsReducer } from '../questions/reducers';
+import { AnswersheetReducer } from '../answersheet/reducers';
 
 export default function createStore(history) {
     const logger = createLogger({
@@ -21,6 +22,7 @@ export default function createStore(history) {
             router: connectRouter(history),
             chapter: ChapterReducer,
             questions: QuestionsReducer,
+            answersheet: AnswersheetReducer,
         }),
         applyMiddleware(
             logger,
