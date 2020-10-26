@@ -3,7 +3,7 @@ const initialState = {
         list: []
     },
     questions: {
-        list: []
+        list: {}
     },
     answersheet: {
         list: {}

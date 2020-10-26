@@ -1,6 +1,7 @@
 {
     "chapter": {
         "one": {
+            "order": 1,
             "title": "UIとは",
             "texts": [
                 {
@@ -14,6 +15,7 @@
             ]
         },
         "two": {
+            "order": 2,
             "title": "閲覧環境の違いについて",
             "texts": [
                 {
@@ -43,6 +45,7 @@
             ]
         },
         "three": {
+            "order": 3,
             "title": "心理学・認知学について",
             "texts": [
                 {
@@ -52,6 +55,7 @@
             ]
         },
         "four": {
+            "order": 4,
             "title": "デザインの部品について",
             "texts": [
                 {
@@ -77,6 +81,7 @@
             ]
         },
         "five": {
+            "order": 5,
             "title": "チームでサービスを作る",
             "texts": [
                 {

@@ -6,7 +6,7 @@ export const QuestionsReducer = (state = initialState.questions, action) => {
         case Actions.FETCH_QUESTIONS:
             return {
                 ...state,
-                list: [...action.payload]
+                list: {...action.payload}
             }
         default:
             return state;

@@ -17,7 +17,11 @@ export const addDataset = functions.https.onRequest(async (req: any, res: any) =
         const dataset = req.body;
         for (const key of Object.keys(dataset)) {
             const data = dataset[key];
-            await db.collection('dataset').doc(key).set(data)
+            
+            for (const _key of Object.keys(data)) {
+                const _data = data[_key]
+                await db.collection(key).doc(_key).set({..._data})
+            }
         }
         sendResponse(res, 200, { message: 'Successfully added dataset! WooHoo!' });
     }

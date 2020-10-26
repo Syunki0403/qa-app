@@ -25,10 +25,18 @@ const QuestionList = () => {
     const answersheet = getAnswersheet(selector);
     const classes = useStyles();
 
+    console.log('questions :>> ', questions);
+
     useEffect(() => {
         dispatch(fetchQuestions(id));
         dispatch(fetchAnswersheet(id));
     }, []);
+
+    useEffect(() => {
+        if (Object.keys(answersheet).length > 0) {
+            setmyAnswersheet({ ...answersheet })
+        }
+    }, [answersheet])
 
     // enterキー押下による送信を防ぐ
     window.document.onkeydown = function (event) {
@@ -58,34 +66,34 @@ const QuestionList = () => {
 
     return (
         <form onSubmit={handleSubmitForm}>
-            {questions.length > 0 && (
-                questions.map((value, index) => (
-                    <QuestionListItem
-                        myAnswersheet={myAnswersheet}
-                        setmyAnswersheet={setmyAnswersheet}
-                        answersheet={answersheet}
-                        question={value.question}
-                        text={value.text}
-                        img={value.img}
-                        qid={value.id}
-                        ansnum={value.ansnum}
-                        answers={value.answers}
-                        key={index}
-                    />
-                ))
-            )}
-            {questions.length > 0 && (
-                <div className={"buttonArea"}>
-                    <div id={"submitAnswerBtn"} className={"submitAnswerBtn"}>
-                        <Button className={classes.button} variant="contained" type="submit" color="primary">回答を送信</Button>
+            {Object.keys(questions).length > 0 && (
+                <>
+                    {Object.keys(questions).map((key) => (
+                        <QuestionListItem
+                            myAnswersheet={myAnswersheet}
+                            setmyAnswersheet={setmyAnswersheet}
+                            answersheet={answersheet}
+                            question={questions[key].question}
+                            text={questions[key].text}
+                            img={questions[key].img}
+                            qid={questions[key].id}
+                            ansnum={questions[key].ansnum}
+                            answers={questions[key].answers}
+                            key={key}
+                        />
+                    ))}
+                    <div className={"buttonArea"}>
+                        <div id={"submitAnswerBtn"} className={"submitAnswerBtn"}>
+                            <Button className={classes.button} variant="contained" type="submit" color="primary">回答を送信</Button>
+                        </div>
+                        <div id={"oneMoreBtn"} className={"oneMoreBtn hideBtn"}>
+                            <Button className={classes.button} variant="contained" type="button" color="primary" onClick={() => window.location.reload()}>もう一度挑戦</Button>
+                        </div>
+                        <div>
+                            <Button className={classes.button} variant="contained" type="button" onClick={() => dispatch(push('/'))}>TOPページへ戻る</Button>
+                        </div>
                     </div>
-                    <div id={"oneMoreBtn"} className={"oneMoreBtn hideBtn"}>
-                        <Button className={classes.button} variant="contained" type="button" color="primary" onClick={() => window.location.reload()}>もう一度挑戦</Button>
-                    </div>
-                    <div>
-                        <Button className={classes.button} variant="contained" type="button" onClick={() => dispatch(push('/'))}>TOPページへ戻る</Button>
-                    </div>
-                </div>
+                </>
             )}
         </form>
     )

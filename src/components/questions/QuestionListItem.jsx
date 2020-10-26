@@ -14,18 +14,16 @@ const useStyles = makeStyles({
 });
 
 const QuestionListItem = (props) => {
-    console.log(imgUX)
-
-
-
-
     const classes = useStyles();
     let textfieldList = [];
+
+    console.log('props.test :>> ', props.test);
+    console.log('props.test2 :>> ', props.test2);
 
     // 入力値をstateに保管
     const handleChangeAns = (e) => {
         // useEffectでDBからのanswersheetをセットできなかったため
-        props.setmyAnswersheet({ ...props.answersheet, ...props.myAnswersheet, [e.target.name]: e.target.value });
+        props.setmyAnswersheet({...props.myAnswersheet, [e.target.name]: e.target.value });
     };
 
     // 一問の空欄の数
